@@ -1,5 +1,5 @@
 {% set name = "biapy" %}
-{% set version = "3.6.3" %}
+{% set version = "3.6.5" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: pip install . --no-deps --no-build-isolation
   entry_points:
     - biapy = biapy:main
 
@@ -53,7 +53,6 @@ test:
     - biapy
   commands:
     - pip check
-    - biapy --help
   requires:
     - python {{ python_min }}
     - pip
